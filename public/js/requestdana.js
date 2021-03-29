@@ -1,20 +1,22 @@
-function onClick(e) {
-	var element = e.target.querySelector('[contenteditable]'), row;
+let table = document.querySelector('#isi');
+let addRow = document.querySelector('#tambah');
 
-	element && e.target != document.documentElement && e.target != document.body && element.focus();
+let noInput = 0;
+let uraianInput = document.querySelector('#transaksi');
+let hargaInput = document.querySelector('#harga');
+let satuanInput = document.querySelector('#satuan');
+let jumlahInput = document.querySelector('#jumlah');
+let subtotalInput = parseDouble(harga)*parseInt(jumlah);
 
-	if (e.target.matchesSelector('.add')) {
-		document.querySelector('table.inventory tbody').appendChild(generateTableRow());
-	}
-	else if (e.target.className == 'cut') {
-		row = e.target.ancestorQuerySelector('tr');
+addRow.addEventListener('click', () => {
+	let no = noInput.value;
+	let uraian =  uraianInput.value;
+	let harga =  hargaInput.value;
+	let satuan =  satuanInput.value;
+	let jumlah =  jumlahInput.value;
+	let subtotal =  subtotalInput.value;
 
-		row.parentNode.removeChild(row);
-	}
+	let template = '<tr><td>${no}</td><td>${uraian}</td><td>${jumlah}</td><td>${satuan}</td><td>${harga}</td><td>${subtotal}</td></tr>';
 
-	updateInvoice();
-}
-
-if (window.addEventListener) {
-	document.addEventListener('click', onClick);
-}
+	table.innerHTML += template;
+});

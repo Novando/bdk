@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2021 at 12:08 PM
+-- Generation Time: Mar 29, 2021 at 11:15 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
@@ -150,7 +150,9 @@ INSERT INTO `produksi` (`nomor`, `dibuat`, `diedit`, `oleh`, `tanggal`, `kode`, 
 (100, '2021-03-25 09:54:07', '2021-03-25 09:54:07', 'AutoSystem', '2021-03-25', 'BDK2-250321-1', '14:00:00', 42, 12, 38, 0, 0, 0, 0, 0),
 (101, '2021-03-26 10:54:57', '2021-03-26 10:54:57', 'AutoSystem', '2021-03-26', 'BDK1-260321-1', '14:00:00', 25, 0, 0, 0, 1, 0, 1, 11),
 (102, '2021-03-26 10:55:14', '2021-03-26 10:55:14', 'AutoSystem', '2021-03-26', 'BDK2-260321-1', '10:00:00', 30, 30, 30, 0, 0, 0, 0, 0),
-(103, '2021-03-26 10:56:32', '2021-03-26 10:56:32', 'AutoSystem', '2021-03-26', 'BDK2-260321-2', '13:00:00', 42, 23, 38, 0, 0, 0, 0, 0);
+(103, '2021-03-26 10:56:32', '2021-03-26 10:56:32', 'AutoSystem', '2021-03-26', 'BDK2-260321-2', '13:00:00', 42, 23, 38, 0, 0, 0, 0, 0),
+(104, '2021-03-27 10:04:06', '2021-03-27 10:04:06', 'AutoSystem', '2021-03-27', 'BDK1-270321-1', '14:00:00', 28, 0, 0, 0, 2, 0, 2, 0),
+(105, '2021-03-29 09:15:36', '2021-03-29 09:15:36', 'AutoSystem', '2021-03-29', 'BDK1-290321-1', '15:00:00', 31, 3, 3, 0, 1, 0, 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -171,7 +173,7 @@ ALTER TABLE `produksi`
 -- AUTO_INCREMENT for table `produksi`
 --
 ALTER TABLE `produksi`
-  MODIFY `nomor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `nomor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
