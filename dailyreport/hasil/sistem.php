@@ -3,6 +3,7 @@
 	$total = "SELECT SUM(u), SUM(t), SUM(c), SUM(c2), SUM(hh1), SUM(hh2), SUM(hh3) FROM produksi WHERE tanggal < '".$_GET['tanggal']."'";
 	$bdk1 = "SELECT * FROM produksi WHERE tanggal = '".$_GET['tanggal']."' AND kode LIKE 'BDK1%'";
 	$bdk2 = "SELECT * FROM produksi WHERE tanggal = '".$_GET['tanggal']."' AND kode LIKE 'BDK2%'";
+	$hh = "SELECT sum(hh1), sum(hh2), sum(hh3) FROM produksi WHERE tanggal = '".$_GET['tanggal']."'";
 	$result = $conn->query($total);
 	$record = $result->fetch_array();
 	$total_u = $record[0];

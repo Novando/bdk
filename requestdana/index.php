@@ -49,7 +49,7 @@
 		</tr>
 		<tr>
 			<td colspan="4">
-				<center><button id="tambah">Tambah</button></center>
+				<center><button id="tambah" onclick="addRow();">Tambah</button></center>
 			</td>
 		</tr>
 	</table>
@@ -64,6 +64,10 @@
 				<th>Harga</th>
 				<th>Subtotal</th>
 			</thead>
+			<tr>
+				<td colspan="5" align="right">TOTAL</td>
+				<td><input type="text" name="total" id="total" disabled></td>
+			</tr>
 		</table>
 	</form>
 

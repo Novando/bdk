@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2021 at 11:15 AM
+-- Generation Time: Apr 01, 2021 at 11:10 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
@@ -21,6 +21,39 @@ SET time_zone = "+00:00";
 --
 -- Database: `ptbdk`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `listpermohonandana`
+--
+
+CREATE TABLE `listpermohonandana` (
+  `id` varchar(17) NOT NULL,
+  `dibuat` timestamp NULL DEFAULT current_timestamp(),
+  `diedit` timestamp NOT NULL DEFAULT current_timestamp(),
+  `pemohon` varchar(80) NOT NULL,
+  `norek` varchar(20) NOT NULL,
+  `bank` varchar(20) NOT NULL,
+  `atasnama` int(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `permohonandana`
+--
+
+CREATE TABLE `permohonandana` (
+  `id` varchar(17) NOT NULL,
+  `dibuat` timestamp NOT NULL DEFAULT current_timestamp(),
+  `diedit` timestamp NOT NULL DEFAULT current_timestamp(),
+  `uraian` varchar(255) NOT NULL,
+  `jumlah` float NOT NULL,
+  `satuan` varchar(10) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `subtotal` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -152,11 +185,22 @@ INSERT INTO `produksi` (`nomor`, `dibuat`, `diedit`, `oleh`, `tanggal`, `kode`, 
 (102, '2021-03-26 10:55:14', '2021-03-26 10:55:14', 'AutoSystem', '2021-03-26', 'BDK2-260321-1', '10:00:00', 30, 30, 30, 0, 0, 0, 0, 0),
 (103, '2021-03-26 10:56:32', '2021-03-26 10:56:32', 'AutoSystem', '2021-03-26', 'BDK2-260321-2', '13:00:00', 42, 23, 38, 0, 0, 0, 0, 0),
 (104, '2021-03-27 10:04:06', '2021-03-27 10:04:06', 'AutoSystem', '2021-03-27', 'BDK1-270321-1', '14:00:00', 28, 0, 0, 0, 2, 0, 2, 0),
-(105, '2021-03-29 09:15:36', '2021-03-29 09:15:36', 'AutoSystem', '2021-03-29', 'BDK1-290321-1', '15:00:00', 31, 3, 3, 0, 1, 0, 1, 0);
+(105, '2021-03-29 09:15:36', '2021-03-29 09:15:36', 'AutoSystem', '2021-03-29', 'BDK1-290321-1', '15:00:00', 28, 0, 0, 0, 1, 0, 1, 0),
+(106, '2021-03-31 09:06:20', '2021-03-31 09:06:20', 'AutoSystem', '2021-03-30', 'BDK1-300321-1', '09:00:00', 3, 3, 3, 0, 0, 0, 0, 0),
+(107, '2021-04-01 02:07:47', '2021-04-01 02:07:47', 'AutoSystem', '2021-03-31', 'BDK1-310321-1', '09:00:00', 24, 21, 2, 2, 3, 0, 2, 0),
+(108, '2021-04-01 02:08:16', '2021-04-01 02:08:16', 'AutoSystem', '2021-03-31', 'BDK1-310321-2', '14:00:00', 25, 11, 7, 0, 0, 0, 0, 0),
+(109, '2021-04-01 02:10:03', '2021-04-01 02:10:03', 'AutoSystem', '2021-03-31', 'BDK2-310321-1', '11:00:00', 0, 55, 65, 0, 0, 0, 0, 0),
+(110, '2021-04-01 05:05:17', '2021-04-01 05:05:17', 'AutoSystem', '2021-03-31', 'BDK2-310321-2', '22:00:00', 72, 0, 0, 0, 0, 0, 0, 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `listpermohonandana`
+--
+ALTER TABLE `listpermohonandana`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `produksi`
@@ -173,7 +217,7 @@ ALTER TABLE `produksi`
 -- AUTO_INCREMENT for table `produksi`
 --
 ALTER TABLE `produksi`
-  MODIFY `nomor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `nomor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

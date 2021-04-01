@@ -1,22 +1,20 @@
-let table = document.querySelector('#isi');
-let addRow = document.querySelector('#tambah');
+var counter = 1;
+var total = 0;
+function addRow() {
+	var no = counter;
+	var uraian = document.getElementById('transaksi').value;
+	var harga = document.getElementById('harga').value;
+	var jumlah = document.getElementById('jumlah').value;
+	var satuan = document.getElementById('satuan').value;
+	var subtotal = parseFloat(harga) * parseFloat(jumlah);
+	var total = total + subtotal;
 
-let noInput = 0;
-let uraianInput = document.querySelector('#transaksi');
-let hargaInput = document.querySelector('#harga');
-let satuanInput = document.querySelector('#satuan');
-let jumlahInput = document.querySelector('#jumlah');
-let subtotalInput = parseDouble(harga)*parseInt(jumlah);
+	var table = document.getElementById('isi');
 
-addRow.addEventListener('click', () => {
-	let no = noInput.value;
-	let uraian =  uraianInput.value;
-	let harga =  hargaInput.value;
-	let satuan =  satuanInput.value;
-	let jumlah =  jumlahInput.value;
-	let subtotal =  subtotalInput.value;
-
-	let template = '<tr><td>${no}</td><td>${uraian}</td><td>${jumlah}</td><td>${satuan}</td><td>${harga}</td><td>${subtotal}</td></tr>';
-
+	var template = '<tr><td><input type="text" name="no'+no+'" value="'+no+'" disabled></td><td><input type="text" name="uraian'+no+'" value="'+uraian+'" disabled></td><td><input type="text" name="jumlah'+no+'" value="'+jumlah+'" disabled></td><td><input type="text" name="satuan'+no+'" value="'+satuan+'" disabled></td><td><input type="text" name="harga'+no+'" value="'+harga+'" disabled></td><td><input type="text" name="subtotal'+no+'" value="'+subtotal+'" disabled></td></tr>';
 	table.innerHTML += template;
-});
+	
+	
+
+	counter = counter + 1;
+}
