@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2021 at 11:10 AM
+-- Generation Time: Apr 02, 2021 at 04:38 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.1.33
 
@@ -35,8 +35,16 @@ CREATE TABLE `listpermohonandana` (
   `pemohon` varchar(80) NOT NULL,
   `norek` varchar(20) NOT NULL,
   `bank` varchar(20) NOT NULL,
-  `atasnama` int(80) NOT NULL
+  `namarek` varchar(80) NOT NULL,
+  `nilai` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `listpermohonandana`
+--
+
+INSERT INTO `listpermohonandana` (`id`, `dibuat`, `diedit`, `pemohon`, `norek`, `bank`, `namarek`, `nilai`) VALUES
+('1/REQ/BDK/IV/2021', '2021-04-02 14:35:56', '2021-04-02 14:35:56', 'Rizky Novando Priyadi', '2521166101', 'BCA', 'Rizky Novando Priyadi', 1935000);
 
 -- --------------------------------------------------------
 
@@ -51,9 +59,23 @@ CREATE TABLE `permohonandana` (
   `uraian` varchar(255) NOT NULL,
   `jumlah` float NOT NULL,
   `satuan` varchar(10) NOT NULL,
-  `harga` int(11) NOT NULL,
-  `subtotal` int(11) NOT NULL
+  `harga` double NOT NULL,
+  `subtotal` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `permohonandana`
+--
+
+INSERT INTO `permohonandana` (`id`, `dibuat`, `diedit`, `uraian`, `jumlah`, `satuan`, `harga`, `subtotal`) VALUES
+('1/REQ/BDK/IV/2021', '2021-04-02 14:35:56', '2021-04-02 14:35:56', 'Uang Makan Gunung Mas (27 Maret s.d 3 April 2021)', 14, 'rit', 50000, 700000),
+('1/REQ/BDK/IV/2021', '2021-04-02 14:35:56', '2021-04-02 14:35:56', 'Uang Makan Driver Jayamix (3 s.d 9 April 2021)', 12, 'rit', 30000, 360000),
+('1/REQ/BDK/IV/2021', '2021-04-02 14:35:56', '2021-04-02 14:35:56', 'Uang Makan Teknisi Jayamix (3 s.d 9 April 2021)', 6, 'hari', 20000, 120000),
+('1/REQ/BDK/IV/2021', '2021-04-02 14:35:56', '2021-04-02 14:35:56', 'Reimburse Pak Yana', 1, 'trsc', 200000, 200000),
+('1/REQ/BDK/IV/2021', '2021-04-02 14:35:56', '2021-04-02 14:35:56', 'Lampu Sorot untuk WS Rowosari', 1, 'pcs', 300000, 300000),
+('1/REQ/BDK/IV/2021', '2021-04-02 14:35:56', '2021-04-02 14:35:56', 'Colokan Listrik', 1, 'pcs', 10000, 10000),
+('1/REQ/BDK/IV/2021', '2021-04-02 14:35:56', '2021-04-02 14:35:56', 'BBM Forklift', 40, 'ltr', 6000, 240000),
+('1/REQ/BDK/IV/2021', '2021-04-02 14:35:56', '2021-04-02 14:35:56', 'Uang untuk pelayan SPBU', 1, 'rit', 5000, 5000);
 
 -- --------------------------------------------------------
 
